@@ -64,6 +64,14 @@ workBtnContainer.addEventListener("click", (e) => {
   if (filter == null) {
     return;
   }
+
+  // Remove selection from the previous itme and select the new
+  const active = document.querySelector(".category__btn.selected");
+  if (active != null) {
+    active.classList.remove("selected");
+  }
+  e.target.classList.add("selected");
+
   projectContainer.classList.add("anim-out");
 
   setTimeout(() => {
